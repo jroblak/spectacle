@@ -91,6 +91,12 @@
   frontmostWindowRect = [SpectacleAccessibilityElement normalizeCoordinatesOfRect:frontmostWindowRect
                                                                     frameOfScreen:frameOfDestinationScreen];
   previousFrontmostWindowRect = frontmostWindowRect;
+    
+  visibleFrameOfDestinationScreen.size.width -= 30;
+  visibleFrameOfDestinationScreen.size.height -= 30;
+  visibleFrameOfDestinationScreen.origin.x += 15;
+  visibleFrameOfDestinationScreen.origin.y += 15;
+    
   windowPositionCalculationResult = [_windowPositionCalculator calculateWindowRect:frontmostWindowRect
                                                         visibleFrameOfSourceScreen:visibleFrameOfSourceScreen
                                                    visibleFrameOfDestinationScreen:visibleFrameOfDestinationScreen
