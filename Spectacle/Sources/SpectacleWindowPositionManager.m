@@ -96,17 +96,47 @@
   visibleFrameOfDestinationScreen.size.height -= 30;
   visibleFrameOfDestinationScreen.origin.x += 15;
   visibleFrameOfDestinationScreen.origin.y += 15;
+  visibleFrameOfSourceScreen.size.width -= 30;
+  visibleFrameOfSourceScreen.size.height -= 30;
+  visibleFrameOfSourceScreen.origin.x += 15;
+  visibleFrameOfSourceScreen.origin.y += 15;
+    
+  if ([action isEqualToString:kSpectacleWindowActionLeftHalf] ||
+      [action isEqualToString:kSpectacleWindowActionLowerLeft] ||
+      [action isEqualToString:kSpectacleWindowActionUpperLeft]) {
+    frontmostWindowRect.size.width += 7.5;
+  }
+  else if ([action isEqualToString:kSpectacleWindowActionRightHalf] ||
+           [action isEqualToString:kSpectacleWindowActionLowerRight] ||
+           [action isEqualToString:kSpectacleWindowActionUpperRight]) {
+    frontmostWindowRect.size.width += 7.5;
+    //frontmostWindowRect.origin.x += 10;
+  }
     
   windowPositionCalculationResult = [_windowPositionCalculator calculateWindowRect:frontmostWindowRect
                                                         visibleFrameOfSourceScreen:visibleFrameOfSourceScreen
                                                    visibleFrameOfDestinationScreen:visibleFrameOfDestinationScreen
                                                                             action:action];
+    
   if (!windowPositionCalculationResult) {
     _failureFeedback();
     return;
   }
   action = windowPositionCalculationResult.action;
   frontmostWindowRect = windowPositionCalculationResult.windowRect;
+    
+  if ([action isEqualToString:kSpectacleWindowActionLeftHalf] ||
+      [action isEqualToString:kSpectacleWindowActionLowerLeft] ||
+      [action isEqualToString:kSpectacleWindowActionUpperLeft]) {
+    frontmostWindowRect.size.width -= 7.5;
+  }
+  else if ([action isEqualToString:kSpectacleWindowActionRightHalf] ||
+           [action isEqualToString:kSpectacleWindowActionLowerRight] ||
+           [action isEqualToString:kSpectacleWindowActionUpperRight]) {
+    frontmostWindowRect.size.width -= 7.5;
+    frontmostWindowRect.origin.x += 7.5;
+  }
+    
   if (CGRectEqualToRect(previousFrontmostWindowRect, frontmostWindowRect)) {
     _failureFeedback();
     return;
