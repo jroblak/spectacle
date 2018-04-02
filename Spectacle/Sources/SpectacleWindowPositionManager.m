@@ -110,7 +110,7 @@
            [action isEqualToString:kSpectacleWindowActionLowerRight] ||
            [action isEqualToString:kSpectacleWindowActionUpperRight]) {
     frontmostWindowRect.size.width += 7.5;
-    //frontmostWindowRect.origin.x += 10;
+    //frontmostWindowRect.origin.x -= 7.5;
   }
     
   windowPositionCalculationResult = [_windowPositionCalculator calculateWindowRect:frontmostWindowRect
@@ -134,7 +134,7 @@
            [action isEqualToString:kSpectacleWindowActionLowerRight] ||
            [action isEqualToString:kSpectacleWindowActionUpperRight]) {
     frontmostWindowRect.size.width -= 7.5;
-    frontmostWindowRect.origin.x += 7.5;
+    //frontmostWindowRect.origin.x += 7.5;
   }
     
   if (CGRectEqualToRect(previousFrontmostWindowRect, frontmostWindowRect)) {
