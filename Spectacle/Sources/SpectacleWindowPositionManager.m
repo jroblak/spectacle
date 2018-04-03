@@ -100,6 +100,7 @@
   visibleFrameOfSourceScreen.size.height -= 24;
   visibleFrameOfSourceScreen.origin.x += 12;
   visibleFrameOfSourceScreen.origin.y += 12;
+  // origin.x / 2 must be divisible by 3 ATM
     
   if ([action isEqualToString:kSpectacleWindowActionLeftHalf] ||
       [action isEqualToString:kSpectacleWindowActionLowerLeft] ||
