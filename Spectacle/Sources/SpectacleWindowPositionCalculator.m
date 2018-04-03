@@ -30,22 +30,22 @@
         return CGRectEqualToRect(rect1, rect2);
       };
       context[@"CGRectGetMinX"] = ^CGFloat(CGRect rect) {
-        return CGRectGetMinX(rect) + 7.5;
+        return CGRectGetMinX(rect) + 12;
       };
       context[@"CGRectGetMinY"] = ^CGFloat(CGRect rect) {
-        return CGRectGetMinY(rect) + 7.5;
+        return CGRectGetMinY(rect) + 12;
       };
       context[@"CGRectGetMidX"] = ^CGFloat(CGRect rect) {
-        return CGRectGetMidX(rect) + 7.5;
+        return CGRectGetMidX(rect) + 12;
       };
       context[@"CGRectGetMidY"] = ^CGFloat(CGRect rect) {
-        return CGRectGetMidY(rect)  + 7.5;
+        return CGRectGetMidY(rect)  + 12;
       };
       context[@"CGRectGetMaxX"] = ^CGFloat(CGRect rect) {
-        return CGRectGetMaxX(rect) + 7.5;
+        return CGRectGetMaxX(rect) + 12;
       };
       context[@"CGRectGetMaxY"] = ^CGFloat(CGRect rect) {
-        return CGRectGetMaxY(rect) + 7.5;
+        return CGRectGetMaxY(rect) + 12;
       };
     }];
   }

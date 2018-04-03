@@ -92,25 +92,25 @@
                                                                     frameOfScreen:frameOfDestinationScreen];
   previousFrontmostWindowRect = frontmostWindowRect;
     
-  visibleFrameOfDestinationScreen.size.width -= 30;
-  visibleFrameOfDestinationScreen.size.height -= 30;
-  visibleFrameOfDestinationScreen.origin.x += 15;
-  visibleFrameOfDestinationScreen.origin.y += 15;
-  visibleFrameOfSourceScreen.size.width -= 30;
-  visibleFrameOfSourceScreen.size.height -= 30;
-  visibleFrameOfSourceScreen.origin.x += 15;
-  visibleFrameOfSourceScreen.origin.y += 15;
+  visibleFrameOfDestinationScreen.size.width -= 24;
+  visibleFrameOfDestinationScreen.size.height -= 24;
+  visibleFrameOfDestinationScreen.origin.x += 12;
+  visibleFrameOfDestinationScreen.origin.y += 12;
+  visibleFrameOfSourceScreen.size.width -= 24;
+  visibleFrameOfSourceScreen.size.height -= 24;
+  visibleFrameOfSourceScreen.origin.x += 12;
+  visibleFrameOfSourceScreen.origin.y += 12;
     
   if ([action isEqualToString:kSpectacleWindowActionLeftHalf] ||
       [action isEqualToString:kSpectacleWindowActionLowerLeft] ||
       [action isEqualToString:kSpectacleWindowActionUpperLeft]) {
-    frontmostWindowRect.size.width += 7.5;
+    frontmostWindowRect.size.width += 6;
   }
   else if ([action isEqualToString:kSpectacleWindowActionRightHalf] ||
            [action isEqualToString:kSpectacleWindowActionLowerRight] ||
            [action isEqualToString:kSpectacleWindowActionUpperRight]) {
-    frontmostWindowRect.size.width += 7.5;
-    //frontmostWindowRect.origin.x -= 7.5;
+    frontmostWindowRect.size.width += 6;
+    frontmostWindowRect.origin.x -= 6;
   }
     
   windowPositionCalculationResult = [_windowPositionCalculator calculateWindowRect:frontmostWindowRect
@@ -128,13 +128,13 @@
   if ([action isEqualToString:kSpectacleWindowActionLeftHalf] ||
       [action isEqualToString:kSpectacleWindowActionLowerLeft] ||
       [action isEqualToString:kSpectacleWindowActionUpperLeft]) {
-    frontmostWindowRect.size.width -= 7.5;
+    frontmostWindowRect.size.width -= 6;
   }
   else if ([action isEqualToString:kSpectacleWindowActionRightHalf] ||
            [action isEqualToString:kSpectacleWindowActionLowerRight] ||
            [action isEqualToString:kSpectacleWindowActionUpperRight]) {
-    frontmostWindowRect.size.width -= 7.5;
-    //frontmostWindowRect.origin.x += 7.5;
+    frontmostWindowRect.size.width -= 6;
+    frontmostWindowRect.origin.x += 6;
   }
     
   if (CGRectEqualToRect(previousFrontmostWindowRect, frontmostWindowRect)) {
